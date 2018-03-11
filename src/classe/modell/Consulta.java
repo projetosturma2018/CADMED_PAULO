@@ -10,8 +10,10 @@ import java.util.Objects;
 public class Consulta {
     
     private int idConulta;
-    private String historico;
+    private String descricao;
     private String patologia;
+    private String dataConsulta;
+    private String horarioConsulta;
 
     public int getIdConulta() {
         return idConulta;
@@ -21,12 +23,12 @@ public class Consulta {
         this.idConulta = idConulta;
     }
 
-    public String getHistorico() {
-        return historico;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setHistorico(String historico) {
-        this.historico = historico;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getPatologia() {
@@ -37,12 +39,32 @@ public class Consulta {
         this.patologia = patologia;
     }
 
+    public String getDataConsulta() {
+        return dataConsulta;
+    }
+
+    public void setDataConsulta(String dataConsulta) {
+        this.dataConsulta = dataConsulta;
+    }
+
+    public String getHorarioConsulta() {
+        return horarioConsulta;
+    }
+
+    public void setHorarioConsulta(String horarioConsulta) {
+        this.horarioConsulta = horarioConsulta;
+    }
+
+    
+    
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + this.idConulta;
-        hash = 17 * hash + Objects.hashCode(this.historico);
-        hash = 17 * hash + Objects.hashCode(this.patologia);
+        int hash = 7;
+        hash = 61 * hash + this.idConulta;
+        hash = 61 * hash + Objects.hashCode(this.descricao);
+        hash = 61 * hash + Objects.hashCode(this.patologia);
+        hash = 61 * hash + Objects.hashCode(this.dataConsulta);
+        hash = 61 * hash + Objects.hashCode(this.horarioConsulta);
         return hash;
     }
 
@@ -58,12 +80,30 @@ public class Consulta {
             return false;
         }
         final Consulta other = (Consulta) obj;
+        if (this.idConulta != other.idConulta) {
+            return false;
+        }
+        if (!Objects.equals(this.descricao, other.descricao)) {
+            return false;
+        }
+        if (!Objects.equals(this.patologia, other.patologia)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataConsulta, other.dataConsulta)) {
+            return false;
+        }
+        if (!Objects.equals(this.horarioConsulta, other.horarioConsulta)) {
+            return false;
+        }
         return true;
     }
 
+    
     @Override
     public String toString() {
-        return "Consulta{" + "idConulta=" + idConulta + ", historico=" + historico + ", patologia=" + patologia + '}';
+        return "Consulta{" + "idConulta=" + idConulta + ", descricao=" + descricao + ", patologia=" + patologia + ", dataConsulta=" + dataConsulta + ", horarioConsulta=" + horarioConsulta + '}';
     }
+
+    
     
 }

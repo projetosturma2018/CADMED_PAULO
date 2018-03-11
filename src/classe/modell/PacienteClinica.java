@@ -16,8 +16,7 @@ public class PacienteClinica {
     private String sexo;
     private String telefone;
     private String medicoResponsavel;
-    private int fkConvenio;
-    private int fkconsulta;
+    private String dataNascimento;
 
     public int getIdPaciente() {
         return idPaciente;
@@ -83,22 +82,16 @@ public class PacienteClinica {
         this.medicoResponsavel = medicoResponsavel;
     }
 
-    public int getFkConvenio() {
-        return fkConvenio;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setFkConvenio(int fkConvenio) {
-        this.fkConvenio = fkConvenio;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
-    public int getFkconsulta() {
-        return fkconsulta;
-    }
-
-    public void setFkconsulta(int fkconsulta) {
-        this.fkconsulta = fkconsulta;
-    }
-
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -110,8 +103,7 @@ public class PacienteClinica {
         hash = 71 * hash + Objects.hashCode(this.sexo);
         hash = 71 * hash + Objects.hashCode(this.telefone);
         hash = 71 * hash + Objects.hashCode(this.medicoResponsavel);
-        hash = 71 * hash + this.fkConvenio;
-        hash = 71 * hash + this.fkconsulta;
+        hash = 71 * hash + Objects.hashCode(this.dataNascimento);
         return hash;
     }
 
@@ -128,12 +120,6 @@ public class PacienteClinica {
         }
         final PacienteClinica other = (PacienteClinica) obj;
         if (this.idPaciente != other.idPaciente) {
-            return false;
-        }
-        if (this.fkConvenio != other.fkConvenio) {
-            return false;
-        }
-        if (this.fkconsulta != other.fkconsulta) {
             return false;
         }
         if (!Objects.equals(this.nome, other.nome)) {
@@ -157,13 +143,18 @@ public class PacienteClinica {
         if (!Objects.equals(this.medicoResponsavel, other.medicoResponsavel)) {
             return false;
         }
+        if (!Objects.equals(this.dataNascimento, other.dataNascimento)) {
+            return false;
+        }
         return true;
     }
 
+    
+    
     @Override
     public String toString() {
-        return "PacienteClinica{" + "idPaciente=" + idPaciente + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", rg=" + rg + ", sexo=" + sexo + ", telefone=" + telefone + ", medicoResponsavel=" + medicoResponsavel + ", fkConvenio=" + fkConvenio + ", fkconsulta=" + fkconsulta + '}';
+        return "PacienteClinica{" + "idPaciente=" + idPaciente + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", rg=" + rg + ", sexo=" + sexo + ", telefone=" + telefone + ", medicoResponsavel=" + medicoResponsavel + ", dataNascimento=" + dataNascimento + '}';
     }
 
-    
+
 }
